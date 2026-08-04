@@ -79,7 +79,7 @@ Mini ensayo. Estudio de caso: 30%
 **Presentación del curso: Ciencia y religión. Hibris, Prometeo y Frankenstein.**  
 14 de agosto
 
-**Lectura obligatoria:** 
+**Lectura obligatoria** 
 Shelley, M. W. (2017). Frankenstein: Or, the modern Prometheus: Annotated for scientists, engineers, and creators of all kinds (D. H. Guston, E. Finn, & J. S. Robert, Eds.). The MIT Press. https://doi.org/10.7551/mitpress/9780262533287.001.0001 (Original work published 1818) Introduction
 [https://direct.mit.edu/books/book/3542/FrankensteinAnnotated-for-Scientists-Engineers-and]
 
