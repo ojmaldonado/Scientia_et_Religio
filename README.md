@@ -79,7 +79,7 @@ Mini ensayo. Estudio de caso: 30%
 **Presentación del curso: Ciencia y religión. Hibris, Prometeo y Frankenstein.**  
 14 de agosto
 
-**Lectura obligatoria** 
+**Lectura obligatoria**
 Shelley, M. W. (2017). Frankenstein: Or, the modern Prometheus: Annotated for scientists, engineers, and creators of all kinds (D. H. Guston, E. Finn, & J. S. Robert, Eds.). The MIT Press. https://doi.org/10.7551/mitpress/9780262533287.001.0001 (Original work published 1818) Introduction
 [https://direct.mit.edu/books/book/3542/FrankensteinAnnotated-for-Scientists-Engineers-and]
 
@@ -101,6 +101,7 @@ Feyerabend, P. (1993). *Against method: Outline of an anarchistic theory of know
 **Ciencia, secularización y desencantamiento del mundo**  
 28 de agosto
 
+**Lecturas obligatorias**  
 Keller, E. F. (1989). *Reflexiones sobre género y ciencia* (A. Sánchez, Trad.). Edicions Alfons el Magnànim. pp: 75-137.
 
 Berger, P. L. (1990). *The sacred canopy: Elements of a sociological theory of religion*. Anchor Books. (Original work published 1967). Cap 6-7.
@@ -110,6 +111,7 @@ Stark, R. (1999). Secularization, R.I.P. *Sociology of Religion, 60*(3), 249–2
 **Género, conocimiento y colonialidad**  
 4 de septiembre
 
+**Lecturas obligatorias**  
 Mazzaferro, A. (2025). Introduction: New directions in the study of New World knowledge making. American Literature, 97(2), 185–206. [https://doi.org/10.1215/00029831-11845230](https://doi.org/10.1215/00029831-11845230)
 
 Liu, Y. (2024). Niccolò Longobardo and the early modern encounter of Europe with China. *Comparative Civilizations Review, 91*(1), 74–94. [https://scholarsarchive.byu.edu/ccr/vol91/iss1/9](https://scholarsarchive.byu.edu/ccr/vol91/iss1/9) ([scholarsarchive.byu.edu](https://scholarsarchive.byu.edu/ccr/vol91/iss1/9/?utm_source=chatgpt.com))
