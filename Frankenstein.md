@@ -12,7 +12,7 @@ Pero las imágenes también permiten contar otra historia.
 
 El mapa jesuita que aparece al comienzo nos recuerda que conocimiento, exploración, evangelización y expansión europea estuvieron profundamente entrelazados. La religión no fue simplemente un obstáculo que la ciencia tuvo que superar. Instituciones religiosas participaron en la circulación de conocimientos, en la observación de territorios, en la educación y en la producción de determinados órdenes del mundo. De igual manera, la ruptura moderna entre ciencia y religión nunca fue tan limpia como solemos imaginar.
 
-![Polar view]()
+![Polar view](Societas-Jesu-Map-Scherer-c1703-Keilo-Jack-site-Centrici.jpg)
 
 Incluso la Ilustración conserva algo de la antigua ambición religiosa: la esperanza de construir un conocimiento capaz de ordenar el mundo. La *Encyclopédie*, presentada visualmente en el curso, representa esa voluntad de reunir, clasificar y hacer accesible el conocimiento humano. Pero junto a ella aparece también la Revolución y la guillotina. La razón que promete emancipación puede convertirse igualmente en instrumento de poder. Conocer, clasificar y transformar nunca son actividades completamente inocentes.
 
