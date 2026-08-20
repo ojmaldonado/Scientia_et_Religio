@@ -16,6 +16,8 @@ El mapa jesuita que aparece al comienzo nos recuerda que conocimiento, exploraci
 
 Incluso la Ilustración conserva algo de la antigua ambición religiosa: la esperanza de construir un conocimiento capaz de ordenar el mundo. La *Encyclopédie*, presentada visualmente en el curso, representa esa voluntad de reunir, clasificar y hacer accesible el conocimiento humano. Pero junto a ella aparece también la Revolución y la guillotina. La razón que promete emancipación puede convertirse igualmente en instrumento de poder. Conocer, clasificar y transformar nunca son actividades completamente inocentes.
 
+![Encyclopedie](fig1_2.jpg)
+
 Es aquí donde **Prometeo** se vuelve una figura particularmente poderosa.
 
 En el mito, Prometeo roba el fuego a los dioses y lo entrega a los humanos. El fuego representa técnica, conocimiento y capacidad de transformación. La civilización comienza con una transgresión. La tecnología aparece entonces acompañada desde el principio por una ambivalencia: aquello que nos permite superar nuestros límites también puede producir nuevas formas de destrucción.
