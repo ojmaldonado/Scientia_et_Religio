@@ -24,6 +24,8 @@ En el mito, Prometeo roba el fuego a los dioses y lo entrega a los humanos. El f
 
 Mary Shelley radicaliza esta pregunta en *Frankenstein, or the Modern Prometheus*. En la presentación, la portada de *Frankenstein* aparece inmediatamente antes de una imagen titulada *The Modern Prometheus*. La asociación no podría ser más clara: Victor Frankenstein es el científico prometeico que pretende atravesar una de las fronteras fundamentales de la condición humana, la separación entre vida y muerte.
 
+![Frankenstein](Frankenstein.1831.inside-cover.jpg)
+
 Pero el problema de Frankenstein no es simplemente que produzca una criatura artificial.
 
 El problema es la relación que establece con su propio deseo de conocimiento.
