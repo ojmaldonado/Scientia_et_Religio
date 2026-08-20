@@ -32,6 +32,8 @@ El problema es la relación que establece con su propio deseo de conocimiento.
 
 En uno de los pasajes escogidos para cerrar esta secuencia, Victor reflexiona sobre aquello que ha perdido durante su obsesión científica. Advierte que la búsqueda del conocimiento puede volverse ilegítima cuando destruye los afectos, la tranquilidad y los vínculos que sostienen una vida humana. El conocimiento deja entonces de ser automáticamente virtuoso. La pregunta ya no es únicamente **¿podemos hacerlo?**, sino **¿qué clase de personas y qué clase de mundo producimos al hacerlo?**
 
+![Napoleon](169618001.jpg)
+
 Resulta significativo que la presentación termine con una oración de Santo Tomás antes del estudio. Después de Prometeo y Frankenstein, reaparece la relación entre conocimiento y virtud. La imagen propone casi un contrapunto: frente a la búsqueda ilimitada del saber, conocer puede concebirse también como una práctica que requiere prudencia, responsabilidad y una determinada disposición ética.
 
 Esta tensión atraviesa todavía nuestra relación con la tecnociencia. Inteligencia artificial, ingeniería genética, reproducción asistida, geoingeniería o extensión de la vida vuelven a colocarnos frente al dilema prometeico. Cada nueva capacidad técnica parece ampliar el territorio de aquello que podemos hacer y, al mismo tiempo, vuelve más urgente la pregunta por aquello que **debemos** hacer.
