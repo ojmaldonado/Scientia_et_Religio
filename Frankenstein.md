@@ -2,7 +2,7 @@
 
 # Prometeo, Frankenstein y la tentación de saber
 
-¿Qué tienen en común una misión jesuita, Galileo frente a sus jueces, Lutero ante una asamblea, la *Encyclopédie*, una guillotina y el monstruo de Frankenstein? A primera vista, parecen escenas pertenecientes a historias distintas. Sin embargo, juntas cuentan una de las grandes narrativas de la modernidad: la transformación de nuestras relaciones con el conocimiento, la autoridad y los límites de lo humano.
+¿Qué tienen en común una misión jesuita, Galileo frente a sus jueces, Lutero ante una asamblea, la *Encyclopédie*, una guillotina y el monstruo de Frankenstein? A primera vista, parecen escenas pertenecientes a historias distintas. Sin embargo, juntas cuentan una de las grandes narrativas de la modernidad: la transformación de nuestras relaciones con el conocimiento, la autoridad y los límites de lo humano. El punto de partida es el desarrollo de las ciencia, la tecnología y la religión como sistemas de creencias autónomos, con sus propias reglas y prácticas de justificación, en el sentido desarrollado por Boltanski and Thévenot (2005). 
 
 La presentación del seminario **Tecnociencia y religión: antagonismo, convergencia y reinvención** comienza precisamente proponiendo tres figuras para pensar esta historia: **hibris, Prometeo y Frankenstein**. No son simplemente referencias literarias. Funcionan como imágenes de una pregunta que sigue siendo inquietantemente contemporánea: **¿hay algo que no deberíamos conocer, crear o transformar, incluso cuando técnicamente podemos hacerlo?**
 
