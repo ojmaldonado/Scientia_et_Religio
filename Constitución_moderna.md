@@ -18,7 +18,7 @@ Este relato supone que durante la Edad Media habría existido un mundo relativam
 
 Sin embargo, autores como Paul Feyerabend permiten cuestionar esta representación retrospectiva. Uno de los problemas de buena parte de la historia tradicional de la ciencia consiste precisamente en reconstruir el pasado utilizando los criterios de racionalidad aceptados en el presente. Desde esta mirada, quienes defendieron teorías posteriormente consideradas verdaderas aparecen como precursores racionales de la ciencia contemporánea, mientras que sus adversarios son desplazados hacia una historia del error, la superstición o la ignorancia.
 
-![Galileo] (GalileoFleury1847.png)
+![Galileo](GalileoFleury1847.png)
 
 Surge así una especie de historia triunfalista de la verdad. Galileo, Newton, Pasteur o Marie Curie aparecen como representantes de una racionalidad que avanzaría de forma sistemática y acumulativa, mientras que las teorías abandonadas son interpretadas simplemente como equivocaciones. El problema es que semejante reconstrucción borra las circunstancias históricas en las que ocurrieron las controversias. Feyerabend propone, por el contrario, una forma de relativismo histórico: comprender las teorías, los argumentos y las decisiones dentro de las condiciones concretas de producción de cada época.
 
