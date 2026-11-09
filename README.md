@@ -250,7 +250,6 @@ Holmberg, C., Bischof, C., & Bauer, S. (2013). Making Predictions: Computing Pop
 Salganik, M. J., Maffeo, L., & Rudin, C. (2020). Prediction, Machine Learning, and Individual Lives: An Interview With Matthew Salganik. Harvard Data Science Review, 2(3). https://doi.org/10.1162/99608f92.eecdfa4e  
 [https://hdsr.mitpress.mit.edu/pub/uan1b4m9/release/3](https://hdsr.mitpress.mit.edu/pub/uan1b4m9/release/3)
 
-[https://jezebel.com/elon-musk-fertility-birth-rates-research-1850757511?utm\_medium=sharefromsite\&utm\_source=jezebel\_twitter](https://jezebel.com/elon-musk-fertility-birth-rates-research-1850757511?utm_medium=sharefromsite&utm_source=jezebel_twitter)
 
 **Entrega de trabajos finales**  
 27 de noviembre
