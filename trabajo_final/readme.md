@@ -1,7 +1,7 @@
 ## Trabajo final 
 *Seminario de profundización: Tecnociencia y religión (Cristianismo): Antagonismo, convergencia y reinvención*
 
-[!trabajo_final/RWS_Tarot_00_Fool.jpg]
+[! El loco] (trabajo_final/RWS_Tarot_00_Fool.jpg)
 
 # Un experimento de escritura
 
