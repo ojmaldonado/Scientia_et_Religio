@@ -1,5 +1,5 @@
 ## Trabajo final 
-Seminario STS y Religión
+*Seminario de profundización: Tecnociencia y religión (Cristianismo): Antagonismo, convergencia y reinvención*
 
 # Un experimento de escritura
 
@@ -11,12 +11,12 @@ Segundo: el judeocristianismo y el Islam se caracterizan por su rechazo viceral 
 
 # Técnica
 La clase del próximo 13 de noviembre cada estudiante hace una tirada de cartas con el tarot Hexen.
+
 A partir de la triada: situación, acción y resultado. La idea es escribir un pequeño ensayo que conecte los contenidos presentes en las cartas de Hexen, el contexto interpretativo del Arcano (Guía Tarot elaborada por Natalia Abril) y las lecturas y temas discutidos en clase.
+
 Extensión (500-1000 palabras). 
+
 Fecha de entrega: 27 de noviembre a las 17:00 (Voy a habilitar un Padlet para entrega).
-
-
-
 
 
 
