@@ -1,6 +1,8 @@
 ## Trabajo final 
 *Seminario de profundización: Tecnociencia y religión (Cristianismo): Antagonismo, convergencia y reinvención*
 
+[!trabajo_final/RWS_Tarot_00_Fool.jpg]
+
 # Un experimento de escritura
 
 El trabajo final es un ensayo corto que responde a la presentación aleatoria de tres temas de discusión bajo el esquema de situación, acción y resultado. Los temas parten de la obra de la artista británica Suzanne Treister, particularmente del desarrollo del Tarot Hexen 2.0, el cual mezcla la tradición esotérica de interpretación de arcanos con figuras de la sociedad digital contemporánea. Así mismo el esquema de presentación de los temas corresponde a una técnica de lectura del tarot basada en tres cartas. En este caso la técnica se ajusta a un contexto de lectura sociológico mediante la tríada: situación, acción y resultado.
