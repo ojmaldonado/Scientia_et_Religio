@@ -1,0 +1,447 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tirada HEXEN 2.0</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+/* Layout: a reading table — header strip, three card slots in sequence (situación → acción → resultado), credits below */
+:root {
+  --paper: #ECEBF2;
+  --surface: #F9F8FC;
+  --ink: #1C1A33;
+  --muted: #5B5876;
+  --line: #CBC8DC;
+  --accent: #3346C9;
+  --back: #1C1A33;
+  --back-line: #3F52D6;
+  --back-fg: #E7E5F3;
+  --display: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121220; --surface: #1C1B2E; --ink: #E7E5F3; --muted: #A4A1C2;
+    --line: #36354F; --accent: #8E9CFF; --back: #0A0A15; --back-line: #3B47B8; --back-fg: #E7E5F3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121220; --surface: #1C1B2E; --ink: #E7E5F3; --muted: #A4A1C2;
+  --line: #36354F; --accent: #8E9CFF; --back: #0A0A15; --back-line: #3B47B8; --back-fg: #E7E5F3;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(24px, 5vw, 56px);
+  display: grid;
+  gap: clamp(28px, 4vw, 44px);
+}
+
+/* Header */
+.top { display: grid; gap: 18px; }
+.eyebrow {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent); margin: 0;
+}
+h1 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1; letter-spacing: -.01em;
+  margin: 0; text-wrap: balance;
+}
+h1 em { font-style: italic; }
+.lede { margin: 0; max-width: 62ch; color: var(--muted); }
+
+.controls {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px;
+  padding-top: 18px; border-top: 1px solid var(--line);
+}
+.seg {
+  display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px;
+  background: var(--surface);
+}
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .04em;
+  padding: 7px 14px; border-radius: 999px; cursor: pointer; color: var(--muted);
+  transition: background .15s, color .15s;
+}
+.seg input:checked + label { background: var(--ink); color: var(--paper); }
+.seg input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+button {
+  font: 500 14px/1 var(--sans); cursor: pointer; border-radius: 999px;
+  padding: 12px 20px; border: 1px solid var(--ink);
+  transition: transform .12s, background .15s, color .15s;
+}
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+button:active { transform: translateY(1px); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary:hover { filter: brightness(1.08); }
+:root[data-theme="dark"] .btn-primary { color: #0A0A15; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-primary { color: #0A0A15; } }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); }
+.counter {
+  margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Spread */
+.spread {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 40px);
+}
+.slot { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.slot-head { display: flex; align-items: baseline; gap: 10px; }
+.slot-num { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .1em; }
+.slot-head h2 {
+  margin: 0; font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.1;
+}
+.slot-head .arrow { margin-left: auto; color: var(--line); font-family: var(--mono); }
+.slot:last-child .arrow { display: none; }
+
+.card {
+  display: block; perspective: 1400px; aspect-ratio: 5 / 8; width: 100%; max-width: 100%;
+  color: inherit; text-decoration: none; cursor: pointer; border-radius: 10px;
+  transition: transform .2s ease;
+}
+.card:hover { transform: translateY(-4px); }
+.card:hover .front { border-color: var(--accent); }
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.card .hint {
+  position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%);
+  font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); background: var(--surface); padding: 2px 6px; white-space: nowrap;
+  opacity: 0; transition: opacity .2s;
+}
+.card:hover .hint, .card:focus-visible .hint { opacity: 1; }
+@media (hover: none) { .card .hint { opacity: 1; } }
+.card-inner {
+  position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d; transition: transform .5s cubic-bezier(.3,.7,.2,1);
+}
+.card-inner.is-back { transform: rotateY(180deg); }
+.face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border-radius: 10px; overflow: hidden;
+}
+.front {
+  background: var(--surface); border: 1px solid var(--line);
+  box-shadow: 0 1px 0 var(--line), 0 18px 40px -28px rgba(20, 18, 50, .45);
+  display: grid; grid-template-rows: auto 1fr auto; padding: 14px;
+}
+.front::before {
+  content: ""; position: absolute; inset: 7px; border: 1px solid var(--line); border-radius: 6px; pointer-events: none;
+}
+.orbit { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.orbit circle, .orbit line { fill: none; stroke: var(--line); stroke-width: 1; }
+.orbit .node { fill: var(--surface); stroke: var(--accent); stroke-width: 1.2; }
+
+.corner {
+  position: relative; display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+  padding: 4px 6px;
+}
+.corner svg { width: 20px; height: 20px; color: var(--accent); }
+.corner.bottom { transform: rotate(180deg); }
+
+.center {
+  position: relative; display: grid; place-content: center; text-align: center; gap: 10px; padding: 0 10px;
+}
+.subject {
+  margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(1.45rem, 2.6vw, 2rem);
+  line-height: 1.08; text-wrap: balance; overflow-wrap: anywhere;
+  background: var(--surface); padding: 6px 4px;
+}
+.subject.long { font-size: clamp(1.15rem, 1.9vw, 1.45rem); }
+.trad {
+  margin: 0; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent);
+}
+.trad span { background: var(--surface); padding: 2px 6px; }
+
+.back {
+  transform: rotateY(180deg); background-color: var(--back);
+  background-image:
+    repeating-linear-gradient(45deg, var(--back-line) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-45deg, var(--back-line) 0 1px, transparent 1px 14px);
+  display: grid; place-items: center; border: 1px solid var(--back);
+}
+.back span {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .3em; color: var(--back-fg);
+  background: var(--back); padding: 10px 14px; border: 1px solid var(--back-line);
+}
+
+.prompt { margin: 0; color: var(--muted); font-size: 14px; max-width: 40ch; }
+.source {
+  font-family: var(--mono); font-size: 12px; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--line); justify-self: start; padding-bottom: 2px;
+}
+.source:hover { border-color: var(--accent); color: var(--accent); }
+.source:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.credits {
+  border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 13px; max-width: 72ch;
+}
+.credits a { color: var(--ink); }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%); background: var(--ink); color: var(--paper);
+  font-family: var(--mono); font-size: 12px; padding: 10px 16px; border-radius: 999px;
+}
+
+@media (max-width: 760px) {
+  .spread { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .card { max-width: 300px; }
+  .slot-head .arrow { display: none; }
+  .counter { margin-left: 0; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-inner, .card { transition: none; }
+  .card:hover { transform: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Situación · Acción · Resultado</p>
+    <h1>Tirada <em>HEXEN 2.0</em></h1>
+    <p class="lede">Tres cartas al azar del tarot de Suzanne Treister, que traza la historia de la cibernética, la vigilancia, la contracultura e Internet. Cada posición propone una pregunta para leer la carta.</p>
+    <div class="controls">
+      <div class="seg" role="radiogroup" aria-label="Mazo">
+        <input type="radio" name="deck" id="deck-all" value="all" checked><label for="deck-all">Mazo completo · 78</label>
+        <input type="radio" name="deck" id="deck-major" value="major"><label for="deck-major">Arcanos mayores · 22</label>
+      </div>
+      <button class="btn-primary" id="draw" type="button">Barajar y tirar</button>
+      <button class="btn-ghost" id="copy" type="button">Copiar tirada</button>
+      <span class="counter" id="counter" aria-live="polite"></span>
+    </div>
+  </header>
+
+  <main class="spread" id="spread"></main>
+
+  <footer class="credits">
+    Cartas: <em>HEXEN 2.0 Tarot</em>, Suzanne Treister (2009–2011). La aplicación muestra el título y el tema de cada carta; la imagen original se consulta en el
+    <a href="https://www.suzannetreister.net/HEXEN2/TAROT_COL/HEXEN_2_TAROT.html" target="_blank" rel="noopener">sitio de la artista</a>.
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function () {
+  const BASE = "https://www.suzannetreister.net/HEXEN2/TAROT_COL/";
+
+  const MAJORS = [
+    ["0","El Loco","Aldous Huxley","Fool"],
+    ["I","El Mago","Timothy Leary","TAROT_MAGICIAN_Leary"],
+    ["II","La Sacerdotisa","Macy Conferences","TAROT_HighPrss_MacyConfs"],
+    ["III","La Emperatriz","Intelligence Agencies","TAROT_EMPRESS_IntAG"],
+    ["IV","El Emperador","Diogenes of Sinope","TAROT_EMPEROR_DSinope"],
+    ["V","El Hierofante","Jim Channon","TAROT_Hierophant-Channon"],
+    ["VI","Los Enamorados","Margaret Mead and Gregory Bateson","Lovers"],
+    ["VII","El Carro","Norbert Wiener","Chariot"],
+    ["VIII","La Justicia","One World Government","TAROT_JUSTICE_OWG-BR"],
+    ["IX","El Ermitaño","Theodore Kaczynski / The Unabomber","Tarot_Hermit-TK"],
+    ["X","La Rueda de la Fortuna","Cybernetics","TAROT_WofF_Cybernetics"],
+    ["XI","La Fuerza","Networked Revolution","TAROT_Strength-NetwRev"],
+    ["XII","El Colgado","Stewart Brand","TAROT_HangedM-SB"],
+    ["XIII","La Muerte","John von Neumann","Death"],
+    ["XIV","La Templanza","ARPANET","TAROT_Temp_Arpanet"],
+    ["XV","El Diablo","The Control Society","TAROT_Devil-ControlSoc"],
+    ["XVI","La Torre","NSA-TIA","TAROT_Tower-NSATIA"],
+    ["XVII","La Estrella","Quantum Computing – AI","TAROT_Star-Quantum"],
+    ["XVIII","La Luna","Transhumanism","TAROT_MOON_TransHu"],
+    ["XIX","El Sol","Anarcho-Primitivism","TAROT_SUN_AnarchoP"],
+    ["XX","El Juicio","Ethics","TAROT_Judg-Eth"],
+    ["XXI","El Mundo","WW1WWIIWWW","TAROT_WORLD_WWW"]
+  ];
+
+  const RANKS = ["As","Dos","Tres","Cuatro","Cinco","Seis","Siete","Ocho","Nueve","Diez","Sota","Caballero","Reina","Rey"];
+  const SHORT = ["As","2","3","4","5","6","7","8","9","10","Sota","Cab.","Reina","Rey"];
+
+  const SUITS = [
+    { key: "chalices", name: "Cálices", cards: [
+      ["Henry Thoreau","ChalicesAce_Thoreau"],["Summer of Love","Chalices2__SLFPCRM"],["The Astrolabe","Chalices3_Astrolabe"],
+      ["Castle Clock","Chalices4_CClock"],["H. P. Lovecraft","Chalices5_Lovecraft"],["Dream Sharing","Chalices6_Dreamsh"],
+      ["Utopia","Chalices7_Utopia"],["Lewis Mumford","Chalices8_Mumford"],["Jean-Jacques Rousseau","Chalices9_Rousseau"],
+      ["Bob Black","Chalices10_BBlack"],["Ken Kesey","ChalicesKv_Kesey"],["Lawrence Jarach","ChalicesKnight_Jarach"],
+      ["Ada Lovelace","ChalicesQ_AdaL"],["Stafford Beer","ChalicesKing_SBeer"] ] },
+    { key: "pentacles", name: "Pentáculos", cards: [
+      ["NBIC","PentaclesAce_NBIC"],["The Intercloud","Pentacles2_Intercloud"],["Electronic Social Engineering","Pencacles3_SocNetw"],
+      ["Tim Berners Lee","Pentacles4_TimBLee"],["Internet Governance","Pentacles5_InternetGov"],["Robert Oppenheimer","Pentacles6_Oppenheimer"],
+      ["Whole Earth Catalog","Pentacles7_WhEaCat"],["Soviet Ternary Computers","Pentacles8_Ternary"],["Computing 1957–1986","Pent9_Computing5786"],
+      ["Winstanley / The Diggers","Pentacles10_Winstanley"],["Technogaianism","PentKnave_Techgai"],["Kurt Lewin","PentKnight_KLewin"],
+      ["Electronic Surveillance","PentQ_ElecSurv"],["Economic Cybernetics","PentaclesKing_EconCyb"] ] },
+    { key: "wands", name: "Bastos", cards: [
+      ["Richard Stallman","WandsAce_RStallman"],["CLODO","Wands2_CLODO"],["Grass Roots Internet Communities","Wands3_GrassRint"],
+      ["Josiah Warren","Wands4_JWarren"],["William Blake","Wands5_Blake"],["Hackers","Wands6_Hackers"],
+      ["Alan Turing","Wands7_Turing"],["William Gibson","Wands8_Gibson"],["LSD","Wands9_LSD"],
+      ["Post WWII Early Computers","Wands10_40sComputers"],["John Zerzan","WandsKnave_Zerzan"],["Unabomber Manifesto","WandsKnight_UManif"],
+      ["Hannah Arendt","WandsQ_HArendt"],["Nikola Tesla","WandsKing_Tesla"] ] },
+    { key: "swords", name: "Espadas", cards: [
+      ["Cyberwar","SwordAce_Netwar"],["H. G. Wells","Sword2_HGWells"],["MKULTRA","Sword3_MKULTRA"],
+      ["World Federation for Mental Health","Sword4_WFMH"],["Google","Sword5_Google"],["Martin Heidegger","Sword6_Heidegger"],
+      ["Cybernetic Séance","Sword7_CybSeance"],["US CYBERCOMMAND","Sword8_USCyberC"],["The Tavistock Institute of Human Relations","Sword9_TavistockI"],
+      ["DARWARS","Sword10_DARWARS"],["Interplanetary Internet","SwordKnave_IntInternet"],["IBM","SwordKnight_IBM"],
+      ["Drones","SwordQueen_Drones"],["8-Circuit Model of Consciousness","SwordKing_8Circuit"] ] }
+  ];
+
+  const GLYPHS = {
+    major: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>',
+    chalices: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h12c0 5.5-2.7 8.5-6 8.5S6 9.5 6 4z"/><path d="M12 12.5V19M8 20h8"/></svg>',
+    pentacles: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 5l4.1 12.7L5.3 9.8h13.4L7.9 17.7z"/></svg>',
+    wands: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M6 21L18 3"/><path d="M15.2 7.2l3 .6M11.4 12.9l-3-.6M9.5 15.7l2.8 1"/></svg>',
+    swords: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.6 3v11h-3.2V5z"/><path d="M7.5 16h9M12 16v5"/></svg>'
+  };
+
+  const DECK = [];
+  MAJORS.forEach(([num, title, subject, file]) => DECK.push({
+    major: true, corner: num, suit: "major", title: num + " · " + title, subject, url: BASE + file + ".html"
+  }));
+  SUITS.forEach(s => s.cards.forEach(([subject, file], i) => DECK.push({
+    major: false, corner: SHORT[i], suit: s.key, title: RANKS[i] + " de " + s.name, subject, url: BASE + file + ".html"
+  })));
+
+  const POSITIONS = [
+    { n: "I", name: "Situación", prompt: "¿Qué configuración de actores, tecnologías e ideas define el punto de partida?" },
+    { n: "II", name: "Acción", prompt: "¿Qué fuerza, práctica o intervención entra en juego sobre esa situación?" },
+    { n: "III", name: "Resultado", prompt: "¿Hacia dónde tiende el conjunto? ¿Qué se estabiliza, qué se rompe?" }
+  ];
+
+  const ORBIT = '<svg class="orbit" viewBox="0 0 250 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">' +
+    '<circle cx="125" cy="200" r="104"/><circle cx="125" cy="200" r="70"/>' +
+    '<line x1="125" y1="96" x2="125" y2="130"/><line x1="125" y1="270" x2="125" y2="304"/>' +
+    '<line x1="35" y1="148" x2="64" y2="165"/><line x1="215" y1="252" x2="186" y2="235"/>' +
+    '<circle class="node" cx="125" cy="96" r="4"/><circle class="node" cx="125" cy="304" r="4"/>' +
+    '<circle class="node" cx="35" cy="148" r="3.5"/><circle class="node" cx="215" cy="252" r="3.5"/>' +
+    '<circle class="node" cx="215" cy="148" r="3"/><circle class="node" cx="35" cy="252" r="3"/></svg>';
+
+  const spread = document.getElementById("spread");
+  spread.innerHTML = POSITIONS.map((p, i) => `
+    <article class="slot" id="slot-${i}">
+      <header class="slot-head"><span class="slot-num">${p.n}</span><h2>${p.name}</h2><span class="arrow" aria-hidden="true">→</span></header>
+      <a class="card" target="_blank" rel="noopener"><div class="card-inner">
+        <div class="face front">
+          ${ORBIT}
+          <div class="corner top"><span class="c-num"></span><span class="c-glyph"></span></div>
+          <div class="center"><p class="subject"></p><p class="trad"><span></span></p></div>
+          <div class="corner bottom"><span class="c-num"></span><span class="c-glyph"></span></div>
+          <span class="hint" aria-hidden="true">Ver imagen ↗</span>
+        </div>
+        <div class="face back"><span>HEXEN 2.0</span></div>
+      </div></a>
+      <p class="prompt">${p.prompt}</p>
+      <a class="source" target="_blank" rel="noopener">Ver la carta en el sitio de la artista ↗</a>
+    </article>`).join("");
+
+  const slots = [...spread.querySelectorAll(".slot")];
+  const inners = slots.map(s => s.querySelector(".card-inner"));
+  const counterEl = document.getElementById("counter");
+  let current = [];
+  let draws = 0;
+  let busy = false;
+
+  function randInt(n) {
+    try { const a = new Uint32Array(1); crypto.getRandomValues(a); return a[0] % n; }
+    catch (e) { return Math.floor(Math.random() * n); }
+  }
+  function pickThree(pool) {
+    const arr = pool.slice();
+    for (let i = 0; i < 3; i++) {
+      const j = i + randInt(arr.length - i);
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr.slice(0, 3);
+  }
+  function deckMode() { return document.querySelector('input[name="deck"]:checked').value; }
+  function pool() { return deckMode() === "major" ? DECK.filter(c => c.major) : DECK; }
+
+  function fill(slot, card) {
+    slot.querySelectorAll(".c-num").forEach(el => el.textContent = card.corner);
+    slot.querySelectorAll(".c-glyph").forEach(el => el.innerHTML = GLYPHS[card.suit]);
+    const subj = slot.querySelector(".subject");
+    subj.textContent = card.subject;
+    subj.classList.toggle("long", card.subject.length > 24);
+    slot.querySelector(".trad span").textContent = card.title;
+    const a = slot.querySelector(".source");
+    a.href = card.url;
+    a.setAttribute("aria-label", "Ver " + card.title + ", " + card.subject + ", en el sitio de Suzanne Treister");
+    const link = slot.querySelector(".card");
+    link.href = card.url;
+    link.setAttribute("aria-label", slot.querySelector("h2").textContent + ": " + card.title + " — " + card.subject + ". Abrir la imagen en el sitio de Suzanne Treister");
+  }
+
+  function updateCounter() {
+    counterEl.textContent = "Tirada nº " + draws + " · " + pool().length + " cartas en el mazo";
+  }
+
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function draw(animate) {
+    if (busy) return;
+    current = pickThree(pool());
+    draws++;
+    if (!animate || reduce) {
+      current.forEach((c, i) => fill(slots[i], c));
+      updateCounter();
+      return;
+    }
+    busy = true;
+    inners.forEach(el => el.classList.add("is-back"));
+    setTimeout(() => {
+      current.forEach((c, i) => fill(slots[i], c));
+      updateCounter();
+      inners.forEach((el, i) => setTimeout(() => el.classList.remove("is-back"), 160 * i));
+      setTimeout(() => { busy = false; }, 160 * 2 + 520);
+    }, 560);
+  }
+
+  const toast = document.getElementById("toast");
+  let toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg; toast.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => { toast.hidden = true; }, 2200);
+  }
+
+  function spreadText() {
+    return "Tirada HEXEN 2.0\n" + current.map((c, i) =>
+      POSITIONS[i].name + ": " + c.title + " — " + c.subject + "\n" + c.url).join("\n");
+  }
+
+  document.getElementById("draw").addEventListener("click", () => draw(true));
+  document.querySelectorAll('input[name="deck"]').forEach(r => r.addEventListener("change", () => draw(true)));
+  document.getElementById("copy").addEventListener("click", () => {
+    const text = spreadText();
+    const fallback = () => {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      let ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+      ta.remove();
+      showToast(ok ? "Tirada copiada" : "No se pudo copiar; selecciona el texto de las cartas");
+    };
+    try {
+      navigator.clipboard.writeText(text).then(() => showToast("Tirada copiada"), fallback);
+    } catch (e) { fallback(); }
+  });
+
+  draw(false);
+})();
+</script>
+
+</body></html>
